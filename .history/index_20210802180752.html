@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK's Portfolio</title>
+    <meta name="descipition" content="Portofolio for software engineer JK">
+    <meta name="autohr" content="JK">
+    <script src="https://kit.fontawesome.com/a7a8d59961.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="imgs/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar__logo">
+            <i class="fas fa-fan"></i>
+            <a href="#">KeeHoon</a>
+        </div>
+        <div class="nav__menu">
+            <ul class="navbar__menu">
+                <li class="navbar__menu__item active">Home</li>
+                <li class="navbar__menu__item">About</li>
+                <li class="navbar__menu__item">Skills</li>
+                <li class="navbar__menu__item">My works</li>
+                <li class="navbar__menu__item">Testimonials</li>
+                <li class="navbar__menu__item">Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <img src="./imgs/cat.jpeg" alt="cat" class="home__avatar">
+        <h1 class="home__title"> Hello, <br /> i'm Fornt-end developer</h1>
+        <h2 class="hoem__description"> A Fornt-end devloper and mathmaticial</h2>
+        <button href="#" class="home__contact">contact me</button>
+    </section>
+
+    <!-- About -->
+    <section id="abuout" class="section">
+        <h1>About me</h1>
+        <p>
+            Hello, my name is keehoon jung. my major is mathmatics and Front-end. I happy to learn something. then
+            i will try everything. then also i can do back-end service and python
+        </p>
+        <div class="about__majors">
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h2 class="major__title">Front-end</h2>
+                <h3 class="major__description">
+                    HTML,CSS,Javascript,Web Apis
+                </h3>
+            </div>
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h2 class="major__title">Back-end</h2>
+                <h3 class="major__description">
+                    NodeJs,Mysql,mongodb,mongoose
+                </h3>
+            </div>            
+            <div class="major">
+                <div class="major__icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h2 class="major__title">Front-end</h2>
+                <h3 class="major__description">
+                    HTML,CSS,Javascript,Web Apis
+                </h3>
+            </div>
+        </div>
+        <div class="about__jobs">
+            <div class="job">
+                <img src="/imgs/job_logo/yonsei.png" alt="yonsei" class="job__logo">
+                <div class="job__description">
+                    <p class="jobname">
+                        graduate at Yonsei University
+                    </p>
+                    <p class="job__period">
+                        2010 Mar - 2016 Feb
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h1>Skills</h1>
+        <h2>Skills & Attributes</h2>
+        <p>Hello, my name is keehoon jung. my major is mathmatics and Front-end. I happy to learn something. then
+            i will try everything. then also i can do back-end service and python </p>
+        <div class="skillset">
+            <div class="skillset__left">
+                <h3 class="skillset__title">Skills</h3>
+                <div class="skill">
+                    <div class="skill_description">
+                        <span>HTML</span>
+                        <span>99%</span>
+                    </div>
+                    <div class="skill__bar">
+                        <div class="skill__value"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill_description">
+                        <span>CSS</span>
+                        <span>99%</span>
+                    </div>
+                    <div class="skill__bar">
+                        <div class="skill__value"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill_description">
+                        <span>Javascript</span>
+                        <span>99%</span>
+                    </div>
+                    <div class="skill__bar">
+                        <div class="skill__value"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill_description">
+                        <span>NodeJs</span>
+                        <span>99%</span>
+                    </div>
+                    <div class="skill__bar">
+                        <div class="skill__value"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skillset__right">
+                <div class="tools">
+                    <h3 class="skillset__title">Tools</h3>
+                    <ul class="tools_list">
+                        <li><span>Visual Studio Code</span></li>
+                        <li><span>Python</span></li>
+                        <li><span>Atom</span></li>
+                    </ul>
+                </div>
+                <div class="etc">
+                    <h3 class="skillset__title">Etc</h3>
+                    <ul class="etc__list">
+                        <li><span>Git</span></li>
+                        <li><span>Math</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work">
+        <h1>My work</h1>
+        <h3>projects</h3>
+        <div class="work__categories">
+            <button class="category__btn">All <span class="category__count">3</span></button>
+            <button class="category__btn">Front-end <span class="category__count">3</span></button>
+            <button class="category__btn">Back-end <span class="category__count">3</span></button>
+            <button class="category__btn">Etc <span class="category__count">3</span></button>
+        </div>
+        <div class="wrok__projects">
+            <a href="#" 
+            class="project"
+            target="blank"
+            >
+            <img src="imgs/navbar-200518-191508.png" alt="Navbar" class="project__img">
+            <div class="project__description">
+                <h3>Navbar</h3>
+                <span>Clone coding with HTML and CSS</span>
+            </div>
+        </a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h1>Testimonials</h1>
+        <h3>See what they say about me</h3>
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="./imgs/people1-200515-154332.jpeg" 
+                alt="people" 
+                class="testimonial__avatar">
+            </div>
+            <div class="testimonial__speech-bubble">
+                <p></p>
+                <p class="name"><a href="#">Ellie</a> / Samsung</p>
+            </div>
+        </div>
+        <div class="testimonials">
+            <div class="testimonial">
+                <img src="./imgs/people1-200515-154332.jpeg" 
+                alt="people" 
+                class="testimonial__avatar">
+            </div>
+            <div class="testimonial__speech-bubble">
+                <p></p>
+                <p class="name"><a href="#">Ellie</a> / Samsung</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="Contact">
+        <h1 class="contact__title">Let's Talk</h1>
+        <h2 class="contact__emial">kuku6471@gmail.com</h2>
+        <div class="Contact__link">
+            <a href="https://github.com/keehoonjung">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p> 
+            2021 JK - All rights reserved
+        </p>
+    </section>
+</body>
+</html>

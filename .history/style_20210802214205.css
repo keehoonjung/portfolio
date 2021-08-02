@@ -387,6 +387,7 @@ p {
 
 .testimonial {
   display: flex;
+  flex-direction: column;
   margin: 32px 0;
   padding-right: 0;
 }
@@ -395,26 +396,11 @@ p {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-}
-
-.testimonial__avatar:nth-child(odd) {
-  margin-right: 40px;
-}
-
-.testimonial__avatar:nth-child(even) {
-  margin-left: 40px;
+  padding: 0;
 }
 
 .testimonial__speech-bubble {
   padding: 18px;
   background-color: var(--color-white);
   border-radius: var(--size-border-radius);
-}
-
-.testimonial__speech-bubble p {
-  color: var(--color-light-grey);
-}
-
-.testimonial__speech-bubble a {
-  color: var(--color-light-blue);
 }

@@ -358,7 +358,6 @@ p {
 }
 .project:hover .project__description {
   opacity: 0.8;
-  transform: translateY(0);
 }
 .project__description h3 {
   color: var(--color-white);

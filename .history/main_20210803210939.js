@@ -34,9 +34,8 @@ function scrollIntoViews(selector) {
 }
 
 // Transparent home
-const home = document.querySelector(".home__container");
-const homeHeight = home.getBoundingClientRect().height;
+const home = document.getElementById("home__container");
 document.addEventListener("scroll", () => {
-  const homeOpacity = 1 - window.scrollY / homeHeight;
+  const homeOpacity = 1 - window.scrollY / 600;
   home.style.opacity = `${homeOpacity}`;
 });

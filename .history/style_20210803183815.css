@@ -103,15 +103,9 @@ p {
   align-items: center;
   color: var(--color-white);
   padding: 16px;
-  transition: all var(--animation-duration) ease-in-out;
 }
 
-#navbar.navbar--dark {
-  background-color: var(--color-light-blue);
-  padding: 8px;
-}
-
-.navbar__logo {
+.nav__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-white);

@@ -96,25 +96,16 @@ p {
 /* Navbar */
 #navbar {
   display: flex;
-  position: fixed;
-  width: 100%;
   justify-content: space-between;
   background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
-  transition: all var(--animation-duration) ease-in-out;
 }
 
-#navbar.navbar--dark {
-  background-color: var(--color-light-blue);
-  padding: 8px;
-}
-
-.navbar__logo {
+.nav__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-  color: var(--color-white);
 }
 
 .navbar__menu {
@@ -149,7 +140,6 @@ p {
 #home {
   background: url("/imgs/background/background.png") center/cover no-repeat;
   padding: 40px;
-  padding-top: 110px;
   text-align: center;
 }
 

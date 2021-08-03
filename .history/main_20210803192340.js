@@ -14,21 +14,21 @@ document.addEventListener("scroll", () => {
 // scroll into menu name
 const navbatMenu = document.querySelector(".navbar__menu");
 navbatMenu.addEventListener("click", (event) => {
+  console.log(event.target.dataset.link);
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) {
     return;
   }
-  scrollIntoViews(link);
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
 // scroll contact button
-const homeContactBtn = document.querySelector(".home__contact");
-homeContactBtn.addEventListener("click", (event) => {
-  scrollIntoViews("#contact");
-});
-
-function scrollIntoViews(selector) {
-  const scrollTo = document.querySelector(selector);
+const contactBtn = document.querySelector(".home__contact");
+contactBtn.addEventListener("click", (event) => {
+  const target = event.target;
+  const link = target.dataset.link;
+  const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: "smooth" });
-}
+});

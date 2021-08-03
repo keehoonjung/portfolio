@@ -19,16 +19,20 @@ navbatMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
-  scrollIntoViews(link);
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
 // scroll contact button
 const homeContactBtn = document.querySelector(".home__contact");
 homeContactBtn.addEventListener("click", (event) => {
-  scrollIntoViews("#contact");
+  const target = event.target;
+  const link = target.dataset.link;
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
 function scrollIntoViews(selector) {
-  const scrollTo = document.querySelector(selector);
+  const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: "smooth" });
 }

@@ -19,7 +19,8 @@ navbatMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
-  scrollIntoViews(link);
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
 // scroll contact button

@@ -65,14 +65,15 @@ workBtnContainer.addEventListener("click", (event) => {
     return;
   }
   projectContainer.classList.add("anim-out");
+  projects.forEach((project) => {
+    if (filter === "*" || project.dataset.type === filter) {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+
   setTimeout(() => {
-    projects.forEach((project) => {
-      if (filter === "*" || project.dataset.type === filter) {
-        project.classList.remove("invisible");
-      } else {
-        project.classList.add("invisible");
-      }
-    });
     projectContainer.classList.remove("anim-out");
   }, 300);
 });

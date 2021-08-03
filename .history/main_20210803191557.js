@@ -20,7 +20,7 @@ navbatMenu.addEventListener("click", (event) => {
     return;
   }
   const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
+  scrollTo.scrollIntoView();
 });
 
 // const menuBtn = document.querySelector(".navbar__menu__item");

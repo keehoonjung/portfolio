@@ -148,22 +148,15 @@ p {
 
 .uparrow-btn {
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 30px;
+  right: 32px;
   width: 50px;
   height: 50px;
   font-size: 35px;
   color: var(--color-white);
   background-color: var(--color-dark-blue);
   border-radius: 50%;
-  opacity: 0;
-  transition: all 300ms ease-in;
-  pointer-events: none;
-}
-
-.uparrow-btn.visible {
-  opacity: 1;
-  pointer-events: auto;
+  display: none;
 }
 /* Home */
 #home {

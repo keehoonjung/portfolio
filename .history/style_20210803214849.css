@@ -156,14 +156,11 @@ p {
   color: var(--color-white);
   background-color: var(--color-dark-blue);
   border-radius: 50%;
-  opacity: 0;
-  transition: all 300ms ease-in;
-  pointer-events: none;
+  display: none;
 }
 
-.uparrow-btn.visible {
-  opacity: 1;
-  pointer-events: auto;
+uparrow-btn.visible {
+  display: block;
 }
 /* Home */
 #home {

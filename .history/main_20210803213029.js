@@ -19,6 +19,10 @@ navbatMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  console.log(link);
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+
   scrollIntoViews(link);
 });
 
@@ -37,16 +41,16 @@ document.addEventListener("scroll", () => {
 });
 
 // Up arrow button
-const arrowBtn = document.querySelector(".uparrow-btn");
+const arrowBtn = document.querySelector(".navbar__uparrow-btn");
 document.addEventListener("scroll", () => {
-  if (window.scrollY > homeHeight / 2) {
-    arrowBtn.classList.add("visible");
+  if (window.scrollY > homeHeight) {
+    arrowBtn.style.display = "block";
   } else {
-    arrowBtn.classList.remove("visible");
+    arrowBtn.style.display = "none";
   }
 });
-arrowBtn.addEventListener("click", () => {
-  scrollIntoViews("#home");
+document.addEventListener("click", () => {
+  scrollIntoViews("#navbar");
 });
 
 function scrollIntoViews(selector) {

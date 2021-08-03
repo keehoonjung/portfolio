@@ -40,9 +40,9 @@ document.addEventListener("scroll", () => {
 const arrowBtn = document.querySelector(".uparrow-btn");
 document.addEventListener("scroll", () => {
   if (window.scrollY > homeHeight / 2) {
-    arrowBtn.classList.add("visible");
+    arrowBtn.style.display = "block";
   } else {
-    arrowBtn.classList.remove("visible");
+    arrowBtn.style.display = "none";
   }
 });
 arrowBtn.addEventListener("click", () => {

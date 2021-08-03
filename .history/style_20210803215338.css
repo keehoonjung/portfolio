@@ -163,7 +163,6 @@ p {
 
 .uparrow-btn.visible {
   opacity: 1;
-  pointer-events: auto;
 }
 /* Home */
 #home {

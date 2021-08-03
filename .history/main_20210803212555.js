@@ -28,6 +28,11 @@ homeContactBtn.addEventListener("click", (event) => {
   scrollIntoViews("#contact");
 });
 
+function scrollIntoViews(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
+
 // Transparent home
 const home = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
@@ -37,19 +42,11 @@ document.addEventListener("scroll", () => {
 });
 
 // Up arrow button
-const arrowBtn = document.querySelector(".uparrow-btn");
+const arrowBtn = document.querySelector(".navbar__uparrow-btn");
 document.addEventListener("scroll", () => {
-  if (window.scrollY > homeHeight / 2) {
-    arrowBtn.classList.add("visible");
+  if (window.scrollY > homeHeight) {
+    arrowBtn.style.display = "block";
   } else {
-    arrowBtn.classList.remove("visible");
+    arrowBtn.style.display = "none";
   }
 });
-arrowBtn.addEventListener("click", () => {
-  scrollIntoViews("#home");
-});
-
-function scrollIntoViews(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
-}

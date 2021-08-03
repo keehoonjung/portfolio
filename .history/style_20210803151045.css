@@ -293,7 +293,6 @@ p {
 }
 
 /* Work */
-
 .work__categories {
   margin: 40px;
 }
@@ -330,7 +329,7 @@ p {
   transition: all var(--animation-duration) ease;
 }
 
-.work__projects {
+.work__project {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -339,7 +338,7 @@ p {
 .project {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-self: center;
   align-items: center;
   width: 280px;
   height: 250px;
@@ -398,6 +397,7 @@ p {
 
 .testimonial {
   display: flex;
+  justify-content: center;
   margin: 32px 0;
 }
 

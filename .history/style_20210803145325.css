@@ -49,6 +49,7 @@ a {
 }
 
 ul {
+  list-style: none;
   padding-left: 0;
 }
 
@@ -293,7 +294,6 @@ p {
 }
 
 /* Work */
-
 .work__categories {
   margin: 40px;
 }
@@ -330,7 +330,7 @@ p {
   transition: all var(--animation-duration) ease;
 }
 
-.work__projects {
+.work__project {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -338,9 +338,7 @@ p {
 
 .project {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   width: 280px;
   height: 250px;
   margin: 2px;
@@ -350,7 +348,7 @@ p {
 .project__img {
   max-width: 100%;
   max-height: 100%;
-  align-self: center;
+  margin-top: 40px;
 }
 
 .project__description {
@@ -398,6 +396,7 @@ p {
 
 .testimonial {
   display: flex;
+  justify-content: center;
   margin: 32px 0;
 }
 
@@ -474,18 +473,5 @@ p {
   }
   .major {
     margin-bottom: 38px;
-  }
-
-  .skillset {
-    flex-direction: column;
-  }
-
-  .project {
-    flex-grow: 1;
-  }
-
-  .testimonial__avatar {
-    width: 80px;
-    height: 80px;
   }
 }

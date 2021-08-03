@@ -330,7 +330,7 @@ p {
   transition: all var(--animation-duration) ease;
 }
 
-.work__projects {
+.work__project {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -398,6 +398,7 @@ p {
 
 .testimonial {
   display: flex;
+  justify-content: center;
   margin: 32px 0;
 }
 

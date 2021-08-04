@@ -12,8 +12,8 @@ document.addEventListener("scroll", () => {
 });
 
 // scroll into menu name
-const navbatMenu = document.querySelector(".navbar__menu");
-navbatMenu.addEventListener("click", (event) => {
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) {
@@ -64,6 +64,13 @@ workBtnContainer.addEventListener("click", (event) => {
   if (filter == null) {
     return;
   }
+  // acctive Btn
+  const target = 
+    event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+  const selectedBtn = document.querySelector('.selected');
+  selectedBtn.classList.remove("selected");
+  target.classList.add('selected');
+
   projectContainer.classList.add("anim-out");
   setTimeout(() => {
     projects.forEach((project) => {
@@ -76,3 +83,15 @@ workBtnContainer.addEventListener("click", (event) => {
     projectContainer.classList.remove("anim-out");
   }, 300);
 });
+
+// Toggle Menu
+const toggleBtn = document.querySelector(".navbar__toggle-btn");
+toggleBtn.addEventListener("click", ()=>{
+  if(toggleBtn.className == "navbar__toggle-btn on"){
+    toggleBtn.classList.remove("on")
+    navbarMenu.classList.remove("visible")
+  } else{
+    toggleBtn.classList.add("on")
+    navbarMenu.classList.add("visible")
+  }
+})

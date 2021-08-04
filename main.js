@@ -11,6 +11,7 @@ document.addEventListener("scroll", () => {
   }
 });
 
+
 // scroll into menu name
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
@@ -19,7 +20,14 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove('open');
   scrollIntoViews(link);
+});
+
+// Toggle Menu
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", ()=>{
+    navbarMenu.classList.add("open")
 });
 
 // scroll contact button
@@ -83,15 +91,3 @@ workBtnContainer.addEventListener("click", (event) => {
     projectContainer.classList.remove("anim-out");
   }, 300);
 });
-
-// Toggle Menu
-const toggleBtn = document.querySelector(".navbar__toggle-btn");
-toggleBtn.addEventListener("click", ()=>{
-  if(toggleBtn.className == "navbar__toggle-btn on"){
-    toggleBtn.classList.remove("on")
-    navbarMenu.classList.remove("visible")
-  } else{
-    toggleBtn.classList.add("on")
-    navbarMenu.classList.add("visible")
-  }
-})

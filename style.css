@@ -138,8 +138,8 @@ p {
 
 .navbar__toggle-btn {
   position: absolute;
-  top: 12px;
-  right: 32px;
+  top: 20px;
+  right: 25px;
   font-size: 24px;
   color: var(--color-white);
   display: none;
@@ -412,7 +412,7 @@ p {
   transform: translateY(0);
 }
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -420,9 +420,9 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
   background-color: var(--color-dark-grey);
 }
@@ -502,6 +502,11 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-light-blue);
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
   }
 
   .navbar__menu {
@@ -511,7 +516,7 @@ p {
     display: none;
   }
 
-  .navbar__menu.visible {
+  .navbar__menu.open {
     display: flex;
   }
 

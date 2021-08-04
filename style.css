@@ -61,6 +61,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Typography */
@@ -194,6 +195,9 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
 /* Section common */
 .section {
   margin: auto;
@@ -331,6 +335,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -342,7 +347,7 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 5px;
 }
 .category__count {
   background-color: var(--color-orange);
@@ -352,9 +357,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
+  right: 16px;
   top: -20px;
-  left: 4px;
   opacity: 0;
   transition: all var(--animation-duration) ease;
 }
@@ -496,8 +501,19 @@ p {
 /* for below 768px screen width */
 
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -520,8 +536,15 @@ p {
     display: flex;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
   .major {
     margin-bottom: 38px;
@@ -531,12 +554,38 @@ p {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
   }
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+  .testimonial__avatar:nth-child(odd),
+  .testimonial__avatar:nth-child(even) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .uparrow-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }

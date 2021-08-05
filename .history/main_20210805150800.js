@@ -158,5 +158,5 @@ window.addEventListener("wheel", () => {
 });
 
 window.addEventListener("load", () => {
-  selectNavItem(navItems[selectedNavIndex]);
+  selectNavItem(navItems[selectedNavIdx]);
 });

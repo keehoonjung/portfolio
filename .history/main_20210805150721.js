@@ -101,7 +101,7 @@ const navItems = sectionIds.map((id) =>
 );
 
 let selectedNavIndex = getIdxOfSectionOnViewPort();
-let selectedNavItem = navItems[selectedNavIndex];
+let selectedNavItem = navItems[0];
 
 function selectNavItem(selected) {
   selectedNavItem.classList.remove("active");
@@ -154,9 +154,5 @@ window.addEventListener("wheel", () => {
   ) {
     selectedNavIndex = navItems.length - 1;
   }
-  selectNavItem(navItems[selectedNavIndex]);
-});
-
-window.addEventListener("load", () => {
   selectNavItem(navItems[selectedNavIndex]);
 });

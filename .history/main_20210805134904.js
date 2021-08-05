@@ -56,6 +56,11 @@ arrowBtn.addEventListener("click", () => {
   scrollIntoViews("#home");
 });
 
+function scrollIntoViews(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
+
 // project filterling
 const workBtnContainer = document.querySelector(".work__categories");
 const projectContainer = document.querySelector(".work__projects");
@@ -100,29 +105,6 @@ const navItems = sectionIds.map((id) =>
   document.querySelector(`[data-link="${id}"]`)
 );
 
-let selectedNavIndex = getIdxOfSectionOnViewPort();
-let selectedNavItem = navItems[selectedNavIndex];
-
-function selectNavItem(selected) {
-  selectedNavItem.classList.remove("active");
-  selectedNavItem = selected;
-  selectedNavItem.classList.add("active");
-}
-
-function scrollIntoViews(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
-  selectNavItem(navItems[sectionIds.indexOf(selector)]);
-}
-
-function getIdxOfSectionOnViewPort() {
-  const section = document
-    .elementFromPoint(window.innerWidth / 2, window.innerHeight * (2 / 3))
-    .closest(".section");
-  const idx = sectionIds.indexOf(`#${section.id}`);
-  return idx;
-}
-
 const observerOptions = {
   root: null,
   rootMargin: "0px",
@@ -131,12 +113,13 @@ const observerOptions = {
 
 const observerCallback = (entries, observer) => {
   entries.forEach((entry) => {
-    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+    if (!entry.isIntersecting) {
       const index = sectionIds.indexOf(`#${entry.target.id}`);
-      if (entry.boundingClientRect.y < 0) {
-        selectedNavIndex = index + 1;
+      let selectedIndex;
+      if (entry.BoundingClientRect.y < 0) {
+        selectedIndex = index + 1;
       } else {
-        selectedNavIndex = index - 1;
+        selectedIndex = index - 1;
       }
     }
   });
@@ -144,19 +127,3 @@ const observerCallback = (entries, observer) => {
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach((section) => observer.observe(section));
-
-window.addEventListener("wheel", () => {
-  if (window.scrollY === 0) {
-    selectedNavIndex = 0;
-  } else if (
-    Math.round(window.scrollY + window.innerHeight) + 1 >=
-    document.body.clientHeight
-  ) {
-    selectedNavIndex = navItems.length - 1;
-  }
-  selectNavItem(navItems[selectedNavIndex]);
-});
-
-window.addEventListener("load", () => {
-  selectNavItem(navItems[selectedNavIndex]);
-});

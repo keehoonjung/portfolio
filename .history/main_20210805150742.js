@@ -156,7 +156,3 @@ window.addEventListener("wheel", () => {
   }
   selectNavItem(navItems[selectedNavIndex]);
 });
-
-window.addEventListener("load", () => {
-  selectNavItem(navItems[selectedNavIndex]);
-});

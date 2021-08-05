@@ -21,6 +21,7 @@ navbarMenu.addEventListener("click", (event) => {
   }
   navbarMenu.classList.remove("open");
   scrollIntoViews(link);
+  selectNavItem(target);
 });
 
 // Toggle Menu
@@ -55,6 +56,11 @@ document.addEventListener("scroll", () => {
 arrowBtn.addEventListener("click", () => {
   scrollIntoViews("#home");
 });
+
+function scrollIntoViews(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
 
 // project filterling
 const workBtnContainer = document.querySelector(".work__categories");
@@ -100,8 +106,8 @@ const navItems = sectionIds.map((id) =>
   document.querySelector(`[data-link="${id}"]`)
 );
 
-let selectedNavIndex = getIdxOfSectionOnViewPort();
-let selectedNavItem = navItems[selectedNavIndex];
+let selectedNavIndex;
+let selectedNavItem = navItems[0];
 
 function selectNavItem(selected) {
   selectedNavItem.classList.remove("active");
@@ -109,24 +115,10 @@ function selectNavItem(selected) {
   selectedNavItem.classList.add("active");
 }
 
-function scrollIntoViews(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
-  selectNavItem(navItems[sectionIds.indexOf(selector)]);
-}
-
-function getIdxOfSectionOnViewPort() {
-  const section = document
-    .elementFromPoint(window.innerWidth / 2, window.innerHeight * (2 / 3))
-    .closest(".section");
-  const idx = sectionIds.indexOf(`#${section.id}`);
-  return idx;
-}
-
 const observerOptions = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.3,
+  threshold: 0.5,
 };
 
 const observerCallback = (entries, observer) => {
@@ -154,9 +146,5 @@ window.addEventListener("wheel", () => {
   ) {
     selectedNavIndex = navItems.length - 1;
   }
-  selectNavItem(navItems[selectedNavIndex]);
-});
-
-window.addEventListener("load", () => {
   selectNavItem(navItems[selectedNavIndex]);
 });
